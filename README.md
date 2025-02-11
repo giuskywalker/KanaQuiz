@@ -11,6 +11,7 @@ Para fazer o download para windows, clique [aqui](https://github.com/giuskywalke
 ## Mac e Linux
 Você precisa ter o python e o pip instalados para realizar a instalação do KanaQuiz.
 
-Para fazer o download para mac, clone este repositório e instale as bibliotecas requeridas com o comando: `pip install -r requirements.txt` ou `python3 -m pip install -r requirements.txt
+1. Clone o repositório manualmente, ou com o comando: `git clone https://github.com/giuskywalker/KanaQuiz.git`
+2. instale as bibliotecas requeridas com o comando: `pip install -r requirements.txt` ou `python3 -m pip install -r requirements.txt
 `
-Após isso, é só executar o programa: `python3 main.py`
+3. Agora é só executar o programa: `python3 main.py`
