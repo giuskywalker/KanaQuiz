@@ -5,10 +5,10 @@ Um programa simples com o intuito de ajudar os estudantes da língua japonesa à
 
 ## Download
 
-## Windows
+### Windows
 Para fazer o download para windows, clique [aqui](https://github.com/giuskywalker/KanaQuiz/releases/download/v1.0.0/kanaquiz.exe)
 
-## Mac e Linux
+### Mac e Linux
 Você precisa ter o python e o pip instalados para realizar a instalação do KanaQuiz.
 
 1. Clone o repositório manualmente, ou com o comando: `git clone https://github.com/giuskywalker/KanaQuiz.git`
