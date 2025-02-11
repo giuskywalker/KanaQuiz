@@ -228,37 +228,36 @@ class KanaQuizApp:
         self.create_widgets()  # Return to the main menu
 
     def show_custom_message(self, title, message, color):
-        # Create a custom popup window
         popup = tk.Toplevel(self.root)
         popup.title(title)
-        popup.geometry("300x150")
+        popup.geometry("400x200")
         popup.configure(bg=BACKGROUND)
-        popup.transient(self.root)  # Make the popup a transient window (modal behavior)
-        popup.grab_set()  # Grab focus
-        popup.focus_force()  # Force focus on the popup
 
-        # Add message label
-        message_label = tk.Label(
-            popup,
-            text=message,
-            font=self.custom_font,
-            fg=FOREGROUND,
-            bg=BACKGROUND,
-            wraplength=250
+        label = tk.Label(
+            popup, text=message, font=self.custom_font, fg=color, bg=BACKGROUND
         )
-        message_label.pack(pady=20)
+        label.pack(pady=20)
 
-        # Add OK button
         ok_button = tk.Button(
             popup,
             text="OK",
             font=self.custom_font,
-            bg=color,
+            bg=ACCENT,
             fg=BACKGROUND,
             activebackground=SECONDARY,
             activeforeground=BACKGROUND,
-            command=popup.destroy
+            command=lambda: [popup.destroy(), self.answer_entry.focus_set()]
         )
+        ok_button.pack(pady=10)
+
+        popup.transient(self.root)  # Mantém o popup na frente da janela principal
+        popup.grab_set()  # Bloqueia interações na janela principal até o popup ser fechado
+        popup.focus_force()  # Garante que o popup receba foco imediatamente
+
+
+        # Add OK button
+   
+    
         ok_button.pack(pady=10)
 
         # Bind Enter key to close the popup
