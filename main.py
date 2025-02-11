@@ -1,6 +1,8 @@
 import random
 import tkinter as tk
 from tkinter import font as tkFont
+import os
+import sys
 
 # Everforest color palette
 BACKGROUND = "#2B3339"  # Dark background
@@ -44,6 +46,7 @@ class KanaQuizApp:
         self.root.configure(bg=BACKGROUND)
 
         # Load custom font
+        self.font_path = self.resource_path("JetBrainsMono NFM.ttf")  # Get font path
         self.custom_font = tkFont.Font(family="JetBrainsMono NFM", size=12)
         self.title_font = tkFont.Font(family="JetBrainsMono NFM", size=18, weight="bold")
 
@@ -56,6 +59,16 @@ class KanaQuizApp:
         self.menu_frame.pack(expand=True, fill="both")
 
         self.create_widgets()
+
+    def resource_path(self, relative_path):
+        """Get the absolute path to a resource, works for dev and PyInstaller."""
+        try:
+            # PyInstaller creates a temp folder and stores path in _MEIPASS
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
+
+        return os.path.join(base_path, relative_path)
 
     def create_widgets(self):
         # Clear the window
@@ -222,6 +235,7 @@ class KanaQuizApp:
         popup.configure(bg=BACKGROUND)
         popup.transient(self.root)  # Make the popup a transient window (modal behavior)
         popup.grab_set()  # Grab focus
+        popup.focus_force()  # Force focus on the popup
 
         # Add message label
         message_label = tk.Label(
