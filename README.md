@@ -2,3 +2,6 @@
 
 # KanaQuiz
 Um programa simples com o intuito de ajudar os estudantes da língua japonesa à aprender os dois primeiros alfabetos de uma forma divertida e gamificada.
+
+## Download
+Para fazer o download para windows, clique [aqui](https://github.com/giuskywalker/KanaQuiz/releases/tag/v1.0.0/kanaquiz.exe)
